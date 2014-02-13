@@ -1,0 +1,68 @@
+Literally every version control system:
+git subversion (svn) mercurial(hg) darcs bazaar fossil perforce bitkeeper
+
+
+Sets up default git stuffs:
+git config --global user.email "My Name"
+
+md stands for "markdown"
+
+All data for a repo is stored in .git.
+
+"staging area"
+
+git commit records anything in the staging area.
+
+-m "adds a commit message"
+
+git diff shows you the difference between the staging area and committed version of a file
+
+git add is used for everything forever.
+
+git stash puts current working directory on the stack
+
+the best use case is probably to take big stuff you're working on and put it in the stash while you make small changes elsewhere
+
+git checkout < brings what we're working into the workding directory, so for instance we can git checkout stash
+
+checkout -p is "patch"
+without -p you're restoring the previous state
+if you have multiple files, each file will be edited seperately otherwise you'll just get everything
+
+If you want to not do this, hit q or d when you get the options bellow
+
+Stage this hunk [y,n,a,d,/,j,J,g,e,?]? ?
+y - stage this hunk
+n - do not stage this hunk
+a - stage this and all the remaining hunks in the file
+d - do not stage this hunk nor any of the remaining hunks in the file
+g - select a hunk to go to
+/ - search for a hunk matching the given regex
+j - leave this hunk undecided, see next undecided hunk
+J - leave this hunk undecided, see next hunk
+k - leave this hunk undecided, see previous undecided hunk
+K - leave this hunk undecided, see previous hunk
+s - split the current hunk into smaller hunks
+e - manually edit the current hunk
+? - print help
+
+So basically this will run through files finding hunks of things
+
+.gitignore will allow you to specify all files that you don't want tracked
+
+* works, dirs work
+
+evaluates from top to bottom, ! means don't ignore. So for instance you can say
+
+*.pdf
+
+!Some_pdf_I_want_to_keep.pdf
+
+will save that pdf( the one you want to keep)
+
+commit your gitignore
+
+git log --graph will show you how branches diverged
+
+
+
